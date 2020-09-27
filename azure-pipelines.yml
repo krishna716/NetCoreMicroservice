@@ -1,0 +1,19 @@
+trigger:
+  - master
+
+pool:
+  vmImage: "ubuntu-16.04"
+  
+variables:
+  registryConnection: mydotnetmicroserviceregistry
+  imageName: mydotnetmicroservice
+
+steps:
+  - task: Docker@2
+    displayName: "Build image"
+    inputs:
+      repository: $(imageName)
+      containerRegistry: $(registryConnection)
+      command: buildAndPush
+      Dockerfile: Dockerfile
+      tags: $(Build.BuildNumber)
