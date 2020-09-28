@@ -5,7 +5,7 @@ pool:
   vmImage: "ubuntu-16.04"
   
 variables:
-  registryConnection: ipasqacontainerregistry
+  registryConnection: mymicroserviceconnection
   imageName: mydotnetmicroservice
 
 steps:
