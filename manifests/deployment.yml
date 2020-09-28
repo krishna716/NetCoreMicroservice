@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mymicroservice
+  name: mydotnetmicroservice 
   labels:
-    app: mymicroservice
+    app: mydotnetmicroservice 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mymicroservice
+      app: mydotnetmicroservice 
   template:
     metadata:
       labels:
-        app: mymicroservice
+        app: mydotnetmicroservice 
     spec:
       containers:
         - name: search
-          image: mymicroserviceregistry.azurecr.io/mymicroservice
+          image: mymicroserviceregistrybkr.azurecr.io/mydotnetmicroservice 
           ports:
             - containerPort: 80
               name: http
